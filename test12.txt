@@ -1,0 +1,5 @@
+Push branch
+Click Compare & pull request
+Fill title + description
+Click Create pull request
+Merge after CI passes
