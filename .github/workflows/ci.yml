@@ -22,4 +22,4 @@ jobs:
       - name: Run simple test
         run: |
           echo "Running CI test..."
-          pwd
+          cat test.txt
