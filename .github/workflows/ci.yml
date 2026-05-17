@@ -12,10 +12,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-
     container:
       image: python:3.11
-
 
     steps:
       - name: Checkout code
@@ -29,7 +27,7 @@ jobs:
           echo "Running CI test..."
           cat test.txt
 
-
       - name: Run test script
+        if: github.event_name == 'pull_request' && github.base_ref == 'main'
         run: |
           python test3.py || echo "No test file"
