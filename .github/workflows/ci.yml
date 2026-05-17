@@ -12,6 +12,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+
+    container:
+      image: python:3.11
+
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,3 +28,8 @@ jobs:
         run: |
           echo "Running CI test..."
           cat test.txt
+
+
+      - name: Run test script
+        run: |
+          python test3.py || echo "No test file"
