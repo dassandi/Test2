@@ -26,6 +26,7 @@ jobs:
       - name: Run simple test
         run: |
           echo "Running CI test..."
+          echo "Testing Pilpeline"
           cat test.txt
 
       - name: Run test script
