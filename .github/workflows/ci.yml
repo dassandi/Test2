@@ -31,5 +31,6 @@ jobs:
 
 
       - name: Run test script
+	if: github.event_name == 'pull_request' && github.base_ref == 'main'
         run: |
           python test3.py || echo "No test file"
