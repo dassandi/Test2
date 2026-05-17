@@ -12,6 +12,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+
+    container:
+      image: python:3.11
+
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,12 +28,6 @@ jobs:
         run: |
           echo "Running CI test..."
           cat test.txt
-
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
 
 
       - name: Run test script
