@@ -36,6 +36,8 @@ jobs:
           echo "Repo variable1 is: ${{ vars.REPO_VAR1 }}"
           echo "Local variable app_name: $APP_NAME"
           echo "Dev env variable1 is: ${{ vars.DEV_ENV_VAR1 }}"
+          echo "Repo variable1 is: ${{ secrets.TEST_SECRET }}"
+
 
 
       - name: Run test script
