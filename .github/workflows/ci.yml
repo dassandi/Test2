@@ -19,6 +19,7 @@ jobs:
 
     container:
       image: python:3.11
+    environment: dev
 
     steps:
       - name: Checkout code
