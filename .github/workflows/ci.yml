@@ -34,6 +34,8 @@ jobs:
           cat test.txt
           echo "Repo variable1 is: ${{ vars.REPO_VAR1 }}"
           echo "Local variable app_name: $APP_NAME"
+          echo "Dev env variable1 is: ${{ vars.DEV_ENV_VAR1 }}"
+
 
       - name: Run test script
         # if: github.event_name == 'pull_request' || github.base_ref == 'main'
