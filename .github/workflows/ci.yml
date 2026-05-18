@@ -14,6 +14,32 @@ env:
   ENVIRONMENT: dev
 
 jobs:
+  test1:
+    runs-on: ubuntu-latest
+
+    container:
+      image: python:3.11
+    environment: test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show files
+        run: ls -la
+      
+
+      - name: Run simple test
+        env:
+           KEY: ${{secrets.TEST_SECRET }}
+        run: |
+          echo "Running CI test..."
+          echo "Testing Pilpeline"
+          cat test.txt
+          echo "Repo variable1 is: ${{ vars.REPO_VAR1 }}"
+          echo "Local variable app_name: $APP_NAME"
+          echo "Dev env variable1 is: ${{ vars.DEV_ENV_VAR1 }}"
+          echo "Repo variable1 is: ${{ secrets.TEST_SECRET }} $KEY"
   test:
     runs-on: ubuntu-latest
 
