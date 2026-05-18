@@ -9,6 +9,10 @@ on:
     branches:
       - main
 
+env:
+  APP_NAME: my-app
+  ENVIRONMENT: dev
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -28,6 +32,8 @@ jobs:
           echo "Running CI test..."
           echo "Testing Pilpeline"
           cat test.txt
+          echo "Repo variable1 is: ${{ vars.REPO_VAR1 }}"
+          echo "Local variable app_name: $APP_NAME"
 
       - name: Run test script
         # if: github.event_name == 'pull_request' || github.base_ref == 'main'
